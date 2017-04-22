@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Label</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onAddLabel(form.value)" #form="ngForm">
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" name="name" ngModel required></ion-input>
+    </ion-item>
+    <button ion-button block type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</ion-content>

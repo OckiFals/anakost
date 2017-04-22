@@ -1,0 +1,7 @@
+# !/bin/bash
+ionic build android --release;
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore anakost.keystore /home/ockifals/Projects/WebstormProjects/anakost/platforms/android/build/outputs/apk/android-release-unsigned.apk anakost;
+
+adb install -r platforms/android/build/outputs/apk/android-release-unsigned.apk; 
+

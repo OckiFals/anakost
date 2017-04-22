@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Today</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let spend of spending">
+      {{ spend.title }}
+      <div class="item-note">
+        <ion-note item-right>
+          Rp. {{ spend.amount }}
+        </ion-note>
+      </div>
+      <ion-note item-right>
+        {{ spend.label }}
+      </ion-note>
+    </button>  
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="danger" (click)="onLoadNewSpending()" ><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

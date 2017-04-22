@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="onClearDataConfirm()">
+      Clear Data
+    </button>
+    <button ion-item>
+      Anakost
+      <div class="item-note">
+        <ion-note item-right>
+          @ockifals
+        </ion-note>
+      </div>
+      <ion-note item-right>
+        Version 0.1
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

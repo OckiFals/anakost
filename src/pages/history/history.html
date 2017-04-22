@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>History</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onShowDatePicker()" >
+        <ion-icon name="ios-funnel-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">Monday</ion-item-divider>
+    <ion-item-divider color="light">Tuesday</ion-item-divider>
+    <ion-item-divider color="light">Wednesday</ion-item-divider>
+    <ion-item-divider color="light">Thursday</ion-item-divider>
+    <ion-item-divider color="light">Friday</ion-item-divider>
+    <ion-item-divider color="light">Saturday</ion-item-divider>
+    <ion-item-divider color="light">Sunday</ion-item-divider>
+  </ion-item-group>
+</ion-content>
