@@ -7,21 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-	<form (ngSubmit)="onAddSpending(form.value)" #form="ngForm">
+	<form (ngSubmit)="onAddSpending()" #form="ngForm">
     <ion-item>
       <ion-label>Title</ion-label>
-      <ion-input type="text" name="title" ngModel required></ion-input>
+      <ion-input type="text" name="title" [(ngModel)]="spending.title" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Amount</ion-label>
-      <ion-input type="text" name="amount" ngModel required></ion-input>
+      <ion-input type="number" name="amount" [(ngModel)]="spending.amount" required></ion-input>
     </ion-item>
     <ion-list>
       <ion-item>
         <ion-label>Label</ion-label>
-        <ion-select name="label" ngModel>
-          <ion-option value="" selected="true">No Label</ion-option>
-          <ion-option *ngFor="let label of labels" [value]="label.id">{{ label.name }}</ion-option>
+        <ion-select name="label" [(ngModel)]="spending.label" required>
+          <ion-option *ngFor="let label of labels; let f = first" [value]="label.id" [selected]="f">
+            {{ label.name }}
+          </ion-option>
         </ion-select>
       </ion-item>
     </ion-list>

@@ -5,6 +5,8 @@ import { NavController } from 'ionic-angular';
 import { SpendingService } from '../../services/spending.service';
 import { LabelService } from '../../services/label.service';
 
+import { Spending } from '../../models/spending.model';
+
 @IonicPage()
 @Component({
     selector: 'page-spending-page',
@@ -12,12 +14,15 @@ import { LabelService } from '../../services/label.service';
 })
 export class SpendingNew {
     labels: any = [];
+    spending: Spending;
 
     constructor(
         private navCtrl: NavController,
         private spendingService: SpendingService,
         private labelService: LabelService
-    ) {}
+    ) {
+        this.spending = new Spending;
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad NewSpending');
@@ -27,8 +32,8 @@ export class SpendingNew {
         this.labels = this.labelService.getLabels();
     }
 
-    onAddSpending(spending: any) {
-        this.spendingService.addSpending(spending);
+    onAddSpending() {
+        this.spendingService.addSpending(this.spending);
         this.navCtrl.pop();
     }
 }

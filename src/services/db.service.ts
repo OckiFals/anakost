@@ -60,7 +60,7 @@ export class DbService {
                 `id` INTEGER PRIMARY KEY AUTOINCREMENT, \
                 `title` TEXT NOT NULL, \
                 `amount` INTEGER NOT NULL, \
-                `label` INTEGER, \
+                `label` INTEGER NOT NULL, \
                 `timestamp` TEXT NOT NULL \
                 );", 
             {})
